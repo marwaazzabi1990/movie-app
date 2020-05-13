@@ -1,0 +1,44 @@
+.App{
+  
+  
+  width: 100%;
+  background-size: cover;
+  height: 900px;
+
+}
+.zone-recherche{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.recherchezone{
+  margin-top: 30px;
+  
+  height: 30px;
+  width: 300px;
+  border-color: 1 solid px;
+  border-radius: 5px;
+
+}
+.recherchezone:focus{
+  border-color: rgb(59, 3, 14);
+}
+::placeholder{
+  font-weight:bold;
+
+  padding-left: 20px;
+  font-size:20px;
+}
+
+.rating{
+  margin-top: 30px;
+}
+.etoile1{
+color: yellow;
+}
+.etoile{
+  color: black;
+}
+.etoile:hover{
+  color: yellow;
+}
