@@ -12,49 +12,30 @@ import {
 
 
 export default class Favorie extends Component{
-state={
-  moviesingulier:{}
-}
+
 componentDidMount(){
 
-  
-
-
-  
-
-
-
-  
-    
-  
+   
 }
 render(){
   return (
  <div>
    <div>< Navbar/></div>
 
+{this.props.favorie.map((el)=>(
+  <div>
+ {el.name}
+  <img src={el.img} />
+ <button onClick={()=>this.props.remove(el)}>Remove</button>
+  </div>
 
- <h1 className="titre">Movie Detail Of<span className="tt"> {this.props.el.name}</span></h1> 
- <div className="pos">
-   <div>
- <img className="img-detail" src ={this.props.el.img}/>
- </div>
+)
  
- <div className="detail">
- <h3> <Label className="label-decription">Name</Label></h3> 
-   <h2>{this.props.el.name}</h2>
-   <h3> <Label className="label-decription">Category</Label></h3> 
-   <h5>{this.props.el.categorie}</h5>
- <h3> <Label className="label-decription">Description</Label></h3> 
-   <p>{this.props.el.description}</p> <br/>
-   <Link to={"/login"} >  <button className="btn-regarde" >Watch</button></Link>
-   </div>
+ )}
+   
+</div>)
+ 
   
- </div>
-</div>
+}}
 
-    
-  );
-}
-}
 

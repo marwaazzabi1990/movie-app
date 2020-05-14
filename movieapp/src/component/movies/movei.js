@@ -18,7 +18,7 @@ function Movieii(props) {
     return (
       <div >
     
-       <img src={props.el.img} alt="cover" onClick={detail} />
+       <img src={props.el.img} alt="cover"  />
        <h2>{ props.el.name }</h2>
    <p> {props.el.description} </p>
    <p>{props.el.rating}</p>

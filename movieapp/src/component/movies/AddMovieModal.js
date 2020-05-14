@@ -16,18 +16,19 @@ export class AddMoviesModal extends Component{
             aria-labelledby="contained-modal-title-vcenter"
             
             centered={true}
-            className="Modal"
+           className="Modal"
           >
             <Modal.Header  >
               <Modal.Title id="contained-modal-title-vcenter" >
-              <h2 className="modal-hecader"> Add Movies</h2> 
+              <h2>  Add Movies</h2> 
               </Modal.Title>
+             
             </Modal.Header>
-            <Modal.Body>
-              <div className="container">
-              <div className="FormAddMovie">
+            <Modal.Body className="body">
+            
+        <div className="container">
       
-        <form className="form-ajout">
+        <form className="form-ajout" >
           <input
             value={this.props.state.name}
             name="description"
@@ -37,7 +38,7 @@ export class AddMoviesModal extends Component{
               this.props.addfilmName(e.target.value);
             }}
            
-          /><br/><br/>
+          />
           <input
            value={this.props.state.description}
             type="text"
@@ -47,7 +48,7 @@ export class AddMoviesModal extends Component{
               this.props.addfilmDescription(e.target.value);
             }}
            
-          /><br/><br/>
+          />
           <input
            value={this.props.state.rating}
             name="description"
@@ -57,7 +58,7 @@ export class AddMoviesModal extends Component{
               this.props.addfilmRate(e.target.value);
             }}
           
-          /> <br/><br/>
+          />
           <input
            value={this.props.state.rating}
             name="img"
@@ -67,21 +68,19 @@ export class AddMoviesModal extends Component{
               this.props.addfilmimg(e.target.value);
             }}
             
-          /> <br/><br/>
+          /> <br/>
+         
         
         </form>
-        <Button      
-              
-              onClick={this.props.addObjectMovie}
-              className="btn-ajout"
-                 >Add Movie</Button>
-      </div>
-              </div>
+       
+        </div>
             
             </Modal.Body>
-            <Modal.Footer >
+            <Modal.Footer>
+            <Button color="primary"  onClick={this.props.addObjectMovie}>Add Movie</Button>{' '}
+          <Button color="secondary"  onClick={this.props.onHide} >Cancel</Button>
         
-              <Button  onClick={this.props.onHide} className="close-button">Close</Button>
+              
             </Modal.Footer>
           </Modal>
         );

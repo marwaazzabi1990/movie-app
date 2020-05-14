@@ -5,7 +5,7 @@ import cover1 from './cover1.jpeg'
 import { Button,ButtonToolbar} from 'react-bootstrap';
 import ButtonToolBar  from 'react-bootstrap/'
 import {AddMoviesModal} from './AddMovieModal'
-import DetaiModalMovie  from './DetailModalMovie'
+
 import Detail from './movieDetai'
 import AddMovie from './addmovie'
 
@@ -35,6 +35,10 @@ export default class Moviei extends Component {
     
     user:[]
   }
+  favorie=[
+    {id:1,name:"batman",description:"Lorem Ipsum est un texte d'espace réservé couramment utilisé dans les industries graphique",rating:"*",categorie:"Documentary" ,img:cover1},
+
+  ]
   
 /*ADD MOVIE*/
   handleChangeName = (value) => {
@@ -122,6 +126,7 @@ render(){
          <a className="etoile">    <i className="fas fa-star"></i></a>
        <a className="etoile"> <i className="fas fa-star"></i></a> </div>
          </div>
+       
   
     <h1 className="title">Movie library</h1>
     <div className="cards " >
@@ -131,21 +136,23 @@ render(){
             
                 <img  className="card img " src={el.img}/><br/>
                    <div className="card_title">
-                      <h3>{el.name}</h3><p>{el.description}</p></div>
+                    
+                      <h3>{el.name}</h3>
+                      <span>{el.rating}</span>
+                      <p>{el.description}</p></div>
          
                         <div className="btn-card">
                       <Link to={"/detail/"+el.id} >  <button className="btn-card-detail" >More Detail</button></Link> 
-                        <Link to={"/favoris/"+el.id} >  <button  className="btn-card-detail" >Add Favori</button></Link> 
+            
+                         <button  className="btn-card-detail"  onClick={()=>this.props.addFavorie(el)}>Add Favori</button>
+             
+                        
               </div>
               </div> )} 
         
            
     </div><br/>
-   
- 
-
-
-     <ButtonToolbar>
+    <ButtonToolbar>
        <button  className="buttonplus" onClick={()=>this.setState({addModelShow:true})}>Add Film</button></ButtonToolbar>
         <AddMoviesModal 
                   addfilmName={this.handleChangeName}
@@ -158,6 +165,11 @@ render(){
                   onHide={addModelClose} 
                 />
        
+   
+ 
+
+
+    
            
     
   
