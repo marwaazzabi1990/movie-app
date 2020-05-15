@@ -8,6 +8,7 @@ import { AddMoviesModal } from "./AddMovieModal";
 
 import Detail from "./movieDetai";
 import AddMovie from "./addmovie";
+import star from "./star.jpeg";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -171,7 +172,7 @@ export default class Moviei extends Component {
               <br />
               <div className="card_title">
                 <h3>{el.name}</h3>
-                <span>{el.rate}</span>
+                <p>{el.rating}</p>
 
                 <p>{el.description}</p>
               </div>

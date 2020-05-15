@@ -1,107 +1,58 @@
-import React from "react";
+import React, { Component } from "react";
 import "./sigin.css";
 
-class Sigin extends React.Component {
-  state = {
-    modal: false,
-    firstname: "",
-    lastname: "",
-    mail: "",
-    password: "",
-    confirmpassword: "",
+export default class Sigin extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      Password: "",
+    };
+  }
+  handleEmailChange = (e) => {
+    this.setState({ email: e.target.value });
   };
-
-  onChangename = (e) => {
-    this.setState({ firstname: e.target.value });
+  handlePasswordChange = (e) => {
+    this.setState({ Password: e.target.value });
   };
-  onChangelastname = (e) => {
-    this.setState({ lastname: e.target.value });
-  };
-  onChangemail = (e) => {
-    this.setState({ mail: e.target.value });
-  };
-
-  onChangepassword = (e) => {
-    this.setState({ password: e.target.value });
-  };
-
-  onChangeconfirmpassword = (e) => {
-    this.setState({ confirmpassword: e.target.value });
-  };
-
-  save = () => {
-    if (this.state.password !== this.state.confirmpassword) {
-      alert("password don`t match");
-    } else {
-      alert("votre donne bien enregetre");
-      localStorage.setItem("firstname", this.state.firstname);
-      localStorage.setItem("lastname", this.state.lastname);
-      localStorage.setItem("mail", this.state.mail);
-      localStorage.setItem("password", this.state.password);
+  authentication = () => {
+    for (var i = 0; i < this.state.email.length; i++) {
+      if (this.state.email[i] == localStorage.getItem("email")[i]) {
+        if (this.state.Password[i] == localStorage.getItem("password")[i]) {
+          alert("Bienvenue ");
+        } else {
+          alert("Oups! vous n'étes pas encore membre ");
+        }
+      }
     }
+    alert("Veuillez créer un compte");
   };
 
   render() {
     return (
       <div>
-        <div className="form">
-          <h1 onClick={this.toggle}>SignUp</h1>
-          <div>
-            <span className="label-n">First Name</span>
-            <input
-              className="email "
-              type="text"
-              placeholder="First Name..."
-              onChange={this.onChangename}
-            />
-          </div>
-          <div>
-            <span className="label-n">Last Name</span>
-
-            <input
-              className="email "
-              type="text"
-              placeholder="Last Name..."
-              onChange={this.onChangelastname}
-            ></input>
-          </div>
-          <div>
-            <span className="label-n"> E-mail</span>
-            <input
-              className="email1"
-              type="text"
-              placeholder="Email..."
-              onChange={this.onChangemail}
-            />
-          </div>
-          <label className="label-n">Password</label>
+        <form class="form">
+          <h1> login Movie Films</h1>
+          <label for="email" className="label-n">
+            E-mail
+          </label>
+          <input type="email" id="email" onChange={this.handleEmailChange} />
+          <br />
+          <label for="password" className="label-n">
+            Password
+          </label>
           <input
-            className="email "
+            class=".email1"
             type="password"
-            placeholder="Password..."
-            onChange={this.onChangepassword}
+            id="password"
+            onChange={this.handlePasswordChange}
           />
-          <div>
-            <label className="label-n">Confirm Password</label>
-            <input
-              className="recherchezone"
-              type="text"
-              placeholder="Confirm Password"
-              onChange={this.onChangeconfirmpassword}
-            />{" "}
-          </div>
-          <div>
-            <button className="bb1" onClick={this.save}>
-              Save
-            </button>{" "}
-            <button className="bb" onClick={this.toggle}>
-              Cancel
-            </button>
-          </div>
-        </div>
+          <br />
+          <button class="bb1" onClick={this.authentication}>
+            Log In
+          </button>
+        </form>
       </div>
     );
   }
 }
-
-export default Sigin;

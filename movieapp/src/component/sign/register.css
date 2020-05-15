@@ -6,10 +6,21 @@
   margin-top: 70px;
   border: 2px solid brown;
 }
+.inp {
+  margin-left: 90px;
+}
+.inp1 {
+  margin-left: 40px;
+}
 .tt1 {
   margin-top: 10px;
   margin-left: 100px;
 }
-.in {
-  margin-left: 80px;
+.bb12 {
+  margin-left: 300px;
+  margin-top: 10px;
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  color: blue;
 }
