@@ -1,101 +1,107 @@
-
 import React from "react";
-import "./sigin.css"
+import "./sigin.css";
 
-const initialState = {
-  name: "",
-  email: "",
-  password: "",
-  nameError: "",
-  emailError: "",
-  passwordError: ""
-};
-
-export default class Sigin  extends React.Component {
-  state = initialState;
-
-  handleChange = event => {
-    const isCheckbox = event.target.type === "checkbox";
-    this.setState({
-      [event.target.name]: isCheckbox
-        ? event.target.checked
-        : event.target.value
-    });
+class Sigin extends React.Component {
+  state = {
+    modal: false,
+    firstname: "",
+    lastname: "",
+    mail: "",
+    password: "",
+    confirmpassword: "",
   };
 
-  validate = () => {
-    let nameError = "";
-    let emailError = "";
-    // let passwordError = "";
-
-    if (!this.state.name) {
-      nameError = "name cannot be blank";
-    }
-
-    if (!this.state.email.includes("@")) {
-      emailError = "invalid email";
-    }
-
-    if (emailError || nameError) {
-      this.setState({ emailError, nameError });
-      return false;
-    }
-
-    return true;
+  onChangename = (e) => {
+    this.setState({ firstname: e.target.value });
+  };
+  onChangelastname = (e) => {
+    this.setState({ lastname: e.target.value });
+  };
+  onChangemail = (e) => {
+    this.setState({ mail: e.target.value });
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    const isValid = this.validate();
-    if (isValid) {
-      console.log(this.state);
-      // clear form
-      this.setState(initialState);
+  onChangepassword = (e) => {
+    this.setState({ password: e.target.value });
+  };
+
+  onChangeconfirmpassword = (e) => {
+    this.setState({ confirmpassword: e.target.value });
+  };
+
+  save = () => {
+    if (this.state.password !== this.state.confirmpassword) {
+      alert("password don`t match");
+    } else {
+      alert("votre donne bien enregetre");
+      localStorage.setItem("firstname", this.state.firstname);
+      localStorage.setItem("lastname", this.state.lastname);
+      localStorage.setItem("mail", this.state.mail);
+      localStorage.setItem("password", this.state.password);
     }
   };
 
   render() {
     return (
       <div>
-        <h1>Log In</h1>
-      <form className="form" onSubmit={this.handleSubmit}>
-        <div>
-          <input
-            name="name"
-            placeholder="name"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
-          <div style={{ fontSize: 12, color: "red" }}>
-            {this.state.nameError}
+        <div className="form">
+          <h1 onClick={this.toggle}>SignUp</h1>
+          <div>
+            <span className="label-n">First Name</span>
+            <input
+              className="email "
+              type="text"
+              placeholder="First Name..."
+              onChange={this.onChangename}
+            />
           </div>
-        </div>
-        <div>
-          <input
-            name="email"
-            placeholder="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <div style={{ fontSize: 12, color: "red" }}>
-            {this.state.emailError}
+          <div>
+            <span className="label-n">Last Name</span>
+
+            <input
+              className="email "
+              type="text"
+              placeholder="Last Name..."
+              onChange={this.onChangelastname}
+            ></input>
           </div>
-        </div>
-        <div>
+          <div>
+            <span className="label-n"> E-mail</span>
+            <input
+              className="email1"
+              type="text"
+              placeholder="Email..."
+              onChange={this.onChangemail}
+            />
+          </div>
+          <label className="label-n">Password</label>
           <input
+            className="email "
             type="password"
-            name="password"
-            placeholder="password"
-            value={this.state.password}
-            onChange={this.handleChange}
+            placeholder="Password..."
+            onChange={this.onChangepassword}
           />
-          <div style={{ fontSize: 12, color: "red" }}>
-            {this.state.passwordError}
+          <div>
+            <label className="label-n">Confirm Password</label>
+            <input
+              className="recherchezone"
+              type="text"
+              placeholder="Confirm Password"
+              onChange={this.onChangeconfirmpassword}
+            />{" "}
+          </div>
+          <div>
+            <button className="bb1" onClick={this.save}>
+              Save
+            </button>{" "}
+            <button className="bb" onClick={this.toggle}>
+              Cancel
+            </button>
           </div>
         </div>
-        <button type="submit" className="bb">submit</button>
-      </form>
       </div>
     );
   }
 }
+
+export default Sigin;

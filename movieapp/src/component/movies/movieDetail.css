@@ -1,43 +1,42 @@
-.titre{
-    color: black;
-    margin-left: 400px;
+.titre {
+  color: black;
+  margin-left: 400px;
 }
-.pos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border: 2px solid black;
-    width: 70%;
-    margin-left: 100px;
-   box-shadow:  5px 10px #888888 ;
+.pos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 2px solid black;
+  width: 70%;
+  margin-left: 100px;
+  box-shadow: 5px 10px #888888;
 }
-.detail{
-    margin-top: 50px;
-    margin-left: 100px;
-    margin-right: 60px;
+.detail {
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 60px;
 }
-.img-detail{
-    width :300px;
-    height: 350px;
-    margin-left:80px;
-    border-radius: 15px;
-    margin-top: 30px;
+.img-detail {
+  width: 300px;
+  height: 350px;
+  margin-left: 80px;
+  border-radius: 15px;
+  margin-top: 30px;
 }
-.tt{
-    color: rgb(199, 67, 67);
+.tt {
+  color: yellow;
 }
-.label-decription{
-    color:rgb(199, 67, 67) ;
-    font-weight: bold;
+.label-decription {
+  color: yellow;
+  font-weight: bold;
 }
-.btn-regarde{
-    width: 150px;
-    height: 60px;
-    background-color:rgb(199, 67, 67) ;
-    border-radius: 10px;
-    margin-top: -30px;
-
+.btn-regarde {
+  width: 150px;
+  height: 60px;
+  border: 2px solid rgb(199, 67, 67);
+  border-radius: 10px;
+  margin-top: -30px;
 }
-.btn-regarde:hover{
-    background-color: blanchedalmond;
+.btn-regarde:hover {
+  background-color: blanchedalmond;
 }

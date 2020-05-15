@@ -133,48 +133,23 @@ export default class Moviei extends Component {
           </div>
           <div className="rating">
             {this.state.ratebtn.map((el) => (
-              <button onClick={() => this.getrate(el)}>
-                <i style={{ color: "red" }} className="fas fa-star"></i>
-              </button>
+              <span
+                variant="primary"
+                style={{ cursor: "pointer" }}
+                onClick={() => this.getrate(el)}
+              >
+                {" "}
+                {<i style={{ color: "#f1ee0f" }} class="fas fa-star"></i>}
+              </span>
             ))}{" "}
           </div>
         </div>
-
-        <h1 className="title">Movie library</h1>
-        <div className="cards ">
-          {this.state.movies.map((el) => (
-            <div className="card " key={el.id}>
-              <img className="card img " src={el.img} />
-              <br />
-              <div className="card_title">
-                <h3>{el.name}</h3>
-                <span>{el.rating}</span>
-                <p>{el.description}</p>
-              </div>
-
-              <div className="btn-card">
-                <Link to={"/detail/" + el.id}>
-                  {" "}
-                  <button className="btn-card-detail">More Detail</button>
-                </Link>
-
-                <button
-                  className="btn-card-detail"
-                  onClick={() => this.props.addFavorie(el)}
-                >
-                  Add Favori
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-        <br />
         <ButtonToolbar>
           <button
             className="buttonplus"
             onClick={() => this.setState({ addModelShow: true })}
           >
-            Add Film
+            <i class="fas fa-plus"></i>
           </button>
         </ButtonToolbar>
         <AddMoviesModal
@@ -187,6 +162,36 @@ export default class Moviei extends Component {
           show={this.state.addModelShow}
           onHide={addModelClose}
         />
+        <h1 className="title">Movie library</h1>
+
+        <div className="cards ">
+          {this.state.movies.map((el) => (
+            <div className="card " key={el.id}>
+              <img className="card img " src={el.img} />
+              <br />
+              <div className="card_title">
+                <h3>{el.name}</h3>
+                <span>{el.rate}</span>
+
+                <p>{el.description}</p>
+              </div>
+              <div className="btn-card">
+                <Link to={"/detail/" + el.id}>
+                  {" "}
+                  <button className="btn-card-detail">
+                    Detail <i class="fas fa-info-circle"></i>
+                  </button>
+                </Link>
+                <button
+                  className="btn-card-detail"
+                  onClick={() => this.props.addFavorie(el)}
+                >
+                  favorie <i style={{ color: "red" }} class="fas fa-heart"></i>
+                </button>{" "}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

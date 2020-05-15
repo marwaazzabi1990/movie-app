@@ -1,78 +1,88 @@
-h1{
-    color: white;
+h1 {
+  color: white;
 }
 
-  .card .card_image {
-    width: inherit;
-    height: inherit;
-    border-radius: 20px;
-    height: 200px;
-
-  }
-
-  .btn-card{
-      margin-top: 20px;
-      display: flex;
-      flex-direction: row;
-  }
-  .card:hover {
-    transform: scale(0.9, 0.9);
-    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-      -5px -5px 30px 15px rgba(0,0,0,0.22);
-  }
-  .btn-card-detail{
-    background-color:rgb(199, 67, 67) ;
-    border-radius: 15px;
-   margin-left: 10px;
-   font-size: 1em;
-   width: 100px;
-  
-  
-    text-decoration: none;
-    color: black;
-    height: 40px;
-   
-    border-radius: 3px;
-  }
-  .cards {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  .card {
- 
-    width: 300px;
-    height: 450px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  .card img {
-    height: 250px;
-    border-radius: 8px;
-  }
-  .card h3 {
-    color: rgb(59, 3, 14);
-  }
-  .card p{
-      margin-top: -10px;
-  }
-    
-  .title{
-    margin-left: 500px;
-    color:black
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 20px;
+  height: 100px;
+  width: 80px;
 }
-.buttonplus{
-    width: 100px;
-    height: 50px;
-    margin-left: 600px;
-    margin-top: 30px;
-    border-radius: 10px;
-    color: rgb(199, 67, 67);
-    font-size: large;
-  
+
+.btn-card {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
 }
-.buttonplus:hover{
-    background-color:rgb(199, 67, 67) ;
-    color: black;
+.card:hover {
+  box-shadow: 5px 5px 5px 5px rgb(199, 67, 67);
+}
+.btn-card-detail {
+  border-color: rgb(199, 67, 67);
+  border-radius: 15px;
+  margin-top: -10px;
+  margin-left: 10px;
+  font-size: 1em;
+  width: 100px;
+
+  text-decoration: none;
+  color: black;
+  height: 40px;
+
+  border-radius: 3px;
+}
+.btn-card-detail:hover {
+  background-color: gray;
+}
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+.card {
+  margin-top: 30px;
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  text-align: center;
+}
+.card img {
+  margin-top: 10px;
+  margin-left: 60px;
+  height: 200px;
+  width: 150px;
+  border-radius: 5px;
+}
+.card h3 {
+  color: rgb(59, 3, 14);
+}
+.card p {
+  margin-top: -10px;
+}
+
+.title {
+  margin-top: 20px;
+  margin-left: 500px;
+  color: black;
+}
+.buttonplus {
+  border-color: rgb(199, 67, 67);
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-left: 600px;
+  font-size: 1em;
+  width: 100px;
+
+  text-decoration: none;
+  color: black;
+  height: 40px;
+  background-color: white;
+
+  border-radius: 3px;
+}
+.buttonplus:hover {
+  background-color: gray;
+  color: black;
 }

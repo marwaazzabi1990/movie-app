@@ -1,19 +1,50 @@
-h1{
-    color:black;
-    margin-left: 500px ;
-    margin-top: 100px;
+h1 {
+  color: black;
+  margin-left: 250px;
+  margin-top: 80px;
 }
-form{
-    width: 500px;
-    height: 200px;
-   
-    margin-left: 400px;
-    
+.form {
+  width: 700px;
+  height: 600px;
+
+  margin-left: 350px;
+  margin-top: 40px;
+  border: 2px solid brown;
 }
-.bb{
-    margin-left: 300px;
-    margin-top: 10px;
-    height: 50px;
-    width: 100px;
-    border-radius: 10px;
+.email1 {
+  margin-left: 100px;
+  margin-top: 30px;
+
+  height: 30px;
+  width: 300px;
+  border-color: 1 solid px;
+  border-radius: 5px;
+}
+.email {
+  margin-left: 70px;
+  margin-top: 30px;
+
+  height: 30px;
+  width: 300px;
+  border-color: 1 solid px;
+  border-radius: 5px;
+}
+.label-n {
+  margin-left: 100px;
+}
+.bb1 {
+  margin-left: 300px;
+  margin-top: 10px;
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  color: brown;
+}
+.bb {
+  margin-left: 80px;
+  margin-top: 10px;
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  color: blue;
 }
