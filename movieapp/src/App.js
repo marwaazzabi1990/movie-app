@@ -11,11 +11,13 @@ import Register from "./component/sign/Register";
 import { AiTwotoneStar } from "react-icons/ai";
 import Detail from "./component/movies/movieDetai";
 import Favorie from "./component/favorie/favorie";
+import Loding from "./component/loding";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
 export default class App extends Component {
   state = {
+    loding: true,
     favorie: [],
   };
   movie = [
@@ -65,11 +67,11 @@ export default class App extends Component {
   ];
 
   addFavorie = (e) => {
-    alert("Ce film bien ajouter au favorie");
+    alert("Film in favorie");
     this.state.favorie.push(e);
   };
   remove = (e) => {
-    alert("supprime");
+    alert("your delete this film");
     let a = "";
     let c = [];
     for (let i = 0; i < this.state.favorie.length; i++) {
@@ -82,9 +84,19 @@ export default class App extends Component {
       favorie: c,
     });
   };
-  /*rating*/
+  /*spinner*/
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        loding: false,
+      });
+    }, 5000);
+  }
 
   render() {
+    if (this.state.loding) {
+      return <Loding />;
+    }
     return (
       <div className="App">
         <Router>

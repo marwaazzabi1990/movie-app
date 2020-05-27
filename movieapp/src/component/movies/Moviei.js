@@ -104,12 +104,10 @@ export default class Moviei extends Component {
   };
   affichage = (et) => {
     if (this.state.etat == true) {
-      alert("true");
       this.setState({
         movies: this.state.table,
       });
     } else {
-      alert("false");
       this.setState({
         movies: this.props.movie,
       });

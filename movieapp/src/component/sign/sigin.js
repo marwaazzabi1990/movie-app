@@ -19,13 +19,12 @@ export default class Sigin extends Component {
     for (var i = 0; i < this.state.email.length; i++) {
       if (this.state.email[i] == localStorage.getItem("email")[i]) {
         if (this.state.Password[i] == localStorage.getItem("password")[i]) {
-          alert("Bienvenue ");
         } else {
-          alert("Oups! vous n'étes pas encore membre ");
+          alert("Inscriver vous ");
         }
       }
     }
-    alert("Veuillez créer un compte");
+    alert("create compte");
   };
 
   render() {
@@ -36,13 +35,18 @@ export default class Sigin extends Component {
           <label for="email" className="label-n">
             E-mail
           </label>
-          <input type="email" id="email" onChange={this.handleEmailChange} />
+          <input
+            type="email"
+            className="inp"
+            id="email"
+            onChange={this.handleEmailChange}
+          />
           <br />
           <label for="password" className="label-n">
             Password
           </label>
           <input
-            class=".email1"
+            class="inp11"
             type="password"
             id="password"
             onChange={this.handlePasswordChange}

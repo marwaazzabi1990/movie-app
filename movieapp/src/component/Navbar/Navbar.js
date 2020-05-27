@@ -15,7 +15,7 @@ function Navbar(props) {
   return (
     <div className="nav-bar">
       <div>
-        <span className="icone">Movies Films</span>
+        <span className="icone">Movies </span>
       </div>
 
       <div className="inscription">
